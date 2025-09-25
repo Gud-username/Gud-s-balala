@@ -1,3 +1,10 @@
+SMODS.Atlas {
+    key = "jokers",
+    path = "jokers.png",
+    px = 71,
+    py = 95,
+}
+
 SMODS.current_mod.extra_tabs = function()
     return {
         {

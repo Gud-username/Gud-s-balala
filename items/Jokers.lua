@@ -31,12 +31,14 @@ SMODS.Joker{ --Cassette
     add_to_deck = function(self, card, from_debuff)
     change_shop_size(-1)
     end
+    
     remove_from_deck = function(self, card, from_debuff)
     change_shop_size(+1)
     end
+    
     calculate = function(self, card, context)
-        return{
-            if context.joker_main then
+        if context.joker_main then
+                    return{
                 Xmult = card.ability.extra.Xmult
             end
       }

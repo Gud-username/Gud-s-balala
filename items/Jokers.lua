@@ -1,4 +1,4 @@
--- change_shop_size(-1)
+
 SMODS.Joker{ --Cassette
     name = "Cassette",
     key = "cassette",
@@ -28,9 +28,7 @@ SMODS.Joker{ --Cassette
     loc_vars = function(self, info_queue, card)
           return {vars = {card.ability.extra.Xmult}}
     end,
-    apply = function(self, back)
-      G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling * 2
-    end,
+    change_shop_size(-1)
     calculate = function(self, card, context)
         return{
             Xmult = card.ability.extra.Xmult

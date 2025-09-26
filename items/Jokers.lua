@@ -28,10 +28,17 @@ SMODS.Joker{ --Cassette
     loc_vars = function(self, info_queue, card)
           return {vars = {card.ability.extra.Xmult}}
     end,
+    add_to_deck = function(self, card, from_debuff)
     change_shop_size(-1)
+    end
+    remove_from_deck = function(self, card, from_debuff)
+    change_shop_size(+1)
+    end
     calculate = function(self, card, context)
         return{
-            Xmult = card.ability.extra.Xmult
+            if context.joker_main then
+                Xmult = card.ability.extra.Xmult
+            end
       }
   end
 }
